@@ -25,7 +25,7 @@ insert into post(id, title, contents, author_id) values(10, 'jang', 'jang123', 1
 -- post에 글쓴적이 있는 author 데이터 1개 삭제 →에러 → 조치 후 삭제
 
 update author set email='abc@naver.com', name='abc' where id=4;
-delete from author where id=3
+delete from author where id=3;
 delete from author where id=1;
 UPDATE post set author_id=null where id=1;
 delete from author where id=1;
