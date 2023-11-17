@@ -29,3 +29,27 @@ delete from author where id=3;
 delete from author where id=1;
 UPDATE post set author_id=null where id=1;
 delete from author where id=1;
+
+
+
+drop table post;
+drop table board;
+create table author(id INT, name VARCHAR(100) NOT NULL, email VARCHAR(255), password VARCHAR(255), role VARCHAR(50), address VARCHAR(255), PRIMARY KEY(id));
+create table post(id INT, title VARCHAR(255), contents VARCHAR(3000), author_id INT, PRIMARY KEY(id), FOREIGN KEY(author_id) REFERENCES author(id));
+
+
+insert into author(id, name, email) values(1, 'abc', 'abc@naver.com');
+insert into author(id, name, email) values(2, 'abd', 'abd@naver.com');
+insert into author(id, name, email) values(3, 'abe', 'abe@naver.com');
+insert into author(id, name, email) values(4, 'abf', 'abf@naver.com');
+insert into author(id, name, email) values(5, 'abg', 'abg@naver.com');
+
+insert into post(id, title, contents, author_id) values(1, 'hello1', 'hhhhh', 1);
+insert into post(id, title, contents, author_id) values(2, 'hello2', 'ggggg', 2);
+insert into post(id, title, contents, author_id) values(3, 'hello3', 'fffff', 3);
+insert into post(id, title, contents) values (4, 'hello4', 'ddddd');
+insert into post(id, title, contents) values (5, 'hello5', 'sssss');
+
+update post set author_id = null where author_id is not null;
+delete from author;
+select * from post order by title ASC, contents DESC limit 3;
