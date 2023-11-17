@@ -19,15 +19,6 @@ SHOW FULL COLUMNS FROM author;
 
 --테이블 생성문 조회
 SHOW CREATE TABLE posts;
---  CREATE TABLE `posts` (
---    `id` int(11) NOT NULL,
---    `title` varchar(255) DEFAULT NULL,
---    `content` varchar(255) DEFAULT NULL,
---    `author_id` int(11) DEFAULT NULL,
---    PRIMARY KEY (`id`),
---    KEY `author_id` (`author_id`),
---    CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`)
---  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 
 -- 테이블 제약조건 조회
 SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
