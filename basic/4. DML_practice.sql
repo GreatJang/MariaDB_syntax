@@ -53,3 +53,21 @@ insert into post(id, title, contents) values (5, 'hello5', 'sssss');
 update post set author_id = null where author_id is not null;
 delete from author;
 select * from post order by title ASC, contents DESC limit 3;
+
+
+-- ALTER문을 써서 post의 title을 not null 조건 변경
+alter table post modify column title VARCHAR(255) not null;
+
+-- auto_increment 실습
+-- id컬럼에 auto_increment 설정
+ alter table post modify column id INT AUTO_increment;
+-- 새로운 데이터 추가(8 low)
+ insert into post(title, contents) values('you', 'ggggggg');
+-- 새로 넣은 데이터 삭제(8 low)
+ delete from post where id = 8;
+-- 다시 데이터 추가
+ insert into post(title, contents) values('you', 'ggggggg');
+-- 다시 데이터 추가 시 9 low로 추가 확인
+
+
+
