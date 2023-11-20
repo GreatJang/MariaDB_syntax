@@ -70,4 +70,16 @@ alter table post modify column title VARCHAR(255) not null;
 -- 다시 데이터 추가 시 9 low로 추가 확인
 
 
+-- UNIQUE 실습
+-- 방법 1
+ALTER TALBE 테이블이름 MODIFY COLUMN 필드이름 필드타입 UNIQUE
+-- 방법 2
+ALTER TABLE 테이블 이름 ADD CONSTRAINT 제약조건이름 UNIQUE(필드이름)
 
+-- author 테이블 email에 unique 제약조건 추가
+-- 컬럼 제약 조건으로 추가
+ALTER TABLE author MODIFY COLUMN email VARCHAR(255) UNIQUE;
+-- 제약 조건 제거 및 index제거
+ALTER TABLE author DROP CONSTRAINT email;
+-- 테이블 제약조건 추가형식으로 추가
+ALTER TABLE author ADD CONSTRAINT email2 UNIQUE(email);
