@@ -83,3 +83,23 @@ ALTER TABLE author MODIFY COLUMN email VARCHAR(255) UNIQUE;
 ALTER TABLE author DROP CONSTRAINT email;
 -- 테이블 제약조건 추가형식으로 추가
 ALTER TABLE author ADD CONSTRAINT email2 UNIQUE(email);
+
+
+
+-- 흐름제어 실습
+select id, title, contents,
+case
+ when author_id = 1 then 'First Author'
+ when author_id = 2 then 'Second Author'
+ when author_id i null then 'Anonymous'
+ ELSE 'Others'
+end
+as author_type from post;
+
+
+-- if문 실습
+SELECT IF(0<1, 'yes', 'no');
+select id, title, contents, ifnull(author_id, 'anonymous') as author_type from post;
+select id, title, contents, if(id = 1, 'first author', 'others') as author_type from post;
+select id, title, contents, if(author_id is not null, author_id, 'anonymous') as author_type from post;
+select id, title, contents, if(author_id is null, 'anonymous', author_id) as author_type from post;
