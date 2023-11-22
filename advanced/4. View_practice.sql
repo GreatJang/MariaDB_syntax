@@ -1,4 +1,4 @@
-===== VIEW 실습 =====
+-- ===== VIEW 실습 =====
 
 create view author_for_view as select name, email FROM author
 

@@ -1,4 +1,4 @@
-===== 사용자 관리 실습 =====
+-- ===== 사용자 관리 실습 =====
 
 CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'djemals';
 
