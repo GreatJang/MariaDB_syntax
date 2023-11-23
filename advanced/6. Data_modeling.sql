@@ -20,3 +20,6 @@ ALTER TABLE post_author MODIFY COLUMN id INT AUTO_INCREMENT;
 -- post_author 테이블, post 테이블, author 테이블 join하여 데이터 값 추출
 select pa.id, pa.post_id, pa.author_id, p.title, p.contents, a.name from post_author as pa inner join post as p on pa.post_id = p.id
 inner join author as a on pa.author_id = a.id;
+
+-- author_id 컬럼 unique 설정
+ALTER TABLE author_table MODIFY COLUMN author_id int(11) UNIQUE
