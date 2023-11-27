@@ -62,5 +62,10 @@ Redis (Remote Dictionary Server) 개요 - 인메모리 데이터 베이스
             - score기준 오름차순 조회
         - ZREVRANGE stock_prices 0 -1
             - score기준 내림차순 조회
-        - get 키명 : value를 가져옴
-        - del 키명 : value를 삭제함
+
+- 주요 명령어
+    - 모든 key값 조회
+        - keys *
+    - 키 삭제
+        - DEL key명
+        - 전체 key 삭제는 FLUSHDB(현재 데이터베이스의 모든 key 삭제)
