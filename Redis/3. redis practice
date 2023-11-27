@@ -1,0 +1,18 @@
+REDIS 사례별 실습
+
+- counter 값을 활용한 increment 시키기
+    - 적용 가능 서비스
+        - 좋아요 기능을 위한 increment값을 빠르게 반영할 수 있고, 추후 RDB에 업데이트 가느ㅡㅇ
+set key 0 --키값 0으로 설정
+incr key -- 카운트 +1
+DECR key -- 카운트 -1
+get key -- 키값 가져오기
+
+- 로그인을 위한 세션데이터 insert 및 get
+
+- redis를 통한 동시성 이슈 해결
+    - Redis를 잠금(Lock) 메커니즘으로 활용
+
+- list를 활용한 최근방문 페이지 또는 최근 살펴본 상품 리스트 등 구현
+
+- zset을 활용한 예매 시스템 waiting 구현
